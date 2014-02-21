@@ -1,0 +1,5 @@
+<%= form_tag("/showhandle", method: "get") do %>
+  <%= label_tag(:username, "Search for:") %>
+  <%= text_field_tag(:username) %>
+  <%= submit_tag("Search") %>
+<% end %>

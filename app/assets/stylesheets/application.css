@@ -1,0 +1,41 @@
+body {
+	background-color: #eeeeee;
+	font-family: 'Istok Web', sans-serif;
+	color: #262626;
+}
+
+#home {
+	text-align: center;
+}
+
+header {
+	background-color: #eeeeee;
+	font-family: 'Istok Web', sans-serif;
+	float: right;
+	text-align: center;
+}
+
+#profile {
+	border-style:solid;
+	border-color:#8f3582;
+	border-width:5px;
+	border-radius: 100px;
+}
+
+button {
+	width: 200px;
+	background-color: #2172A8;
+	padding:15px;
+	font-size:18px;
+	color: #ffffff;
+	border-radius:4px;
+	text-decoration:none;
+	text-transform: none;
+	border-style: none;
+	border-radius:10px;
+}
+
+a {
+	text-decoration:none;
+	color: #ffffff;
+}

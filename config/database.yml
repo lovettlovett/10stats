@@ -1,0 +1,9 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: 
+  user: julia
+  host: localhost
+  pool: 5
+  password: 
+  timeout: 5000
