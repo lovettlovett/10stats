@@ -1,8 +1,11 @@
+<div id="search"><br><br>
+<h2>compare your Instagram<br> to a friend's</h2>
 <%= form_tag("/showbattle", method: "get") do %>
-  <%= label_tag(:handle, "Handle #1:") %>
-  <%= text_field_tag(:handle) %>
-  <%= label_tag(:versus, "Handle #2:") %>
-  <%= text_field_tag(:versus) %>
+  <%= label_tag(:handle, "your username:") %><br>
+  <%= text_field_tag(:handle) %><br><br>
+  <%= label_tag(:versus, "friend's username:") %><br>
+  <%= text_field_tag(:versus) %><br><br>
 
   <%= submit_tag("Duel") %>
 <% end %>
+</div>
