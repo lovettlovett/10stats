@@ -1,18 +1,3 @@
-.col-group > div {
-  padding: 1em;
-  margin-bottom: 1em;  
-}
-
-@media screen and (min-width: 44em) {
-  .col-group {
-    overflow: hidden;
-  }
-  .col-group > div {
-    float: left;
-    width: 50%;
-  }
-}
-
 body {
 	background-color: #eeeeee;
 	font-family: 'Istok Web', sans-serif;
