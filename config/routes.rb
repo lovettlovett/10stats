@@ -9,4 +9,6 @@ LiveInsta::Application.routes.draw do
   get "/showbattle", to: "main#showbattle"
   post "/showbattle", to: "main#showbattle"
 
+  
+
 end
