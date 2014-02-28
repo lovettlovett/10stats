@@ -39,7 +39,6 @@ gem 'pry-rails'
 
 gem 'rails_12factor', group: :production
 
-gem 'pry-rails'
 gem 'rspec-rails'
 gem 'shoulda-matchers'
 gem 'capybara'
@@ -47,6 +46,7 @@ gem 'launchy'
 gem 'factory_girl_rails'
 gem 'ffaker'
 
+gem 'simplecov'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

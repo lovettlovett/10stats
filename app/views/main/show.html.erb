@@ -1,131 +1,104 @@
-<h1><%=@username%> stats</h1>
+<div class="main_container">
+	<div class="pseudo_container">
+		<!--stats container-->
+		<div class="stats_container">
+			<!--Handle-->
+			<div class="handle_name">
+				<h1><%=@username%></h1>
+			</div>
+			<!--End Handle-->
+			<!--Section Banner-->
+			<div class="section_banner">
+				<h2 class="section_title">quick look</h2>
+			</div>
+			<!--End Section Banner-->
+			<!--start bubbles-->
+			<div class="bubbles">
+				<div class="bubble">
+					<div class="icon_container">
+						<img class="icon" src="<%= image_path 'heart.png'%>"/>
+					</div>
+					<div>
+						<h3>likes</h3>
+					</div>
+				</div>
 
-<h2><em>Profile Details</em></h2>
+				<div class="bubble">
+					<div class="icon_container">
+						<img class="icon" src="<%= image_path 'frequency.png'%>"/>
+					</div>
+					<div>
+						<h3>frequency</h3>
+					</div>
+				</div>
 
-<table>
-	<tr>
-		<td>
-			<img id="profile" src="<%=@profile_picture%>">
-		</td>
-		<td width="30px">
-		</td>
-		<td>
-			<table>
-				<tr>
-					<td>
-						<b>Full Name:</b>
-							<% if @full_name == ""%>
-								n/a
-							<%else%>
-								<%=@full_name%>
-							<%end%>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<b>Bio: </b>
-							<% if @bio == ""%>
-								n/a
-							<%else%>
-								<%=@bio%>
-							<%end%>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<b>Website:</b> 
-							<% if @website == ""%>
-								n/a
-							<% else %>	
-								<%=@website%>
-							<%end%>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						
-							<b>Total Number of Photos:</b> <%=@photos%>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						
-							<b>Number of People <%=@username%> Follows:</b> <%=@follows%>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						
-							<b>Followed By:</b> <%=@followed_by.to_i%>
-					</td>
-				</tr>
+				<div class="bubble">
+					<div class="icon_container">
+						<img class="icon" src="<%= image_path 'friend.png'%>"/>
+					</div>
+					<div>
+						<h3>friends</h3>
+					</div>
+				</div>
 
-			</table>
-		</td>
-	</tr>
-</table>
+			</div>
+			<!--end bubbles-->
+			<!--start bubble boxes-->
+			<div class="bubble_boxes">
+				<div class="bubble_box">
+					<p class="box_text"><span id="av_likes"><%=@average_likes_per_photo%></span>average likes per photo</p>
+				</div>
 
-<h2><em>Stats on <%=@username%>'s Last 10 Posts</em></h2>
+				<div class="bubble_box">
+					<p class="box_text">you post every <span id="velocity"><%=@velocity%></span> days</p>
+				</div>
 
-<h3>Velocity:</h3>
-	Over the past <%=@timeframe%> days, <%=@username%> has posted once every <%=@velocity%> days
-<h3>Top Tagged Friends:</h3>
+				<div class="bubble_box">
+					<p class="box_text"><span id="percent_followers"><%=@percentage_of_followers_who_liked%>% </span>of your followers liked a post</p>
+				</div>
+			</div>
+			<!--end bubble boxes-->
+			<!--start lists-->
+			<div class="lists" id="left">
+				<div class="list">
+					<div class="list_title"><h2><span style="color:#FFD700">e</span>top fans<span style="color:#FFD700">d</span></h2></div>
+					<ol>
+						<% i = 0 %>
+						<% while i < @number_of_photos %>
+							<% if @top_likers[i] %>
+							<li><%=@top_likers[i][0]%></li>
+							<% end %>
+							<% i = i + 1 %>
+						<% end %>
+					</ol>
+				</div>
 
-	<% if @top_tagged != "No users tagged"%>
-		<ol>
-			<%@top_tagged.each do |user_count_pair|%>
-			<li><%= user_count_pair[0]%>: <%= user_count_pair[1]%> photos</li>
-			<%end%>
+				<div class="list" id="right">
+					<div class="list_title"><h2>top tagged</h2></div>
+						<% if @top_tagged != "No users tagged"%>
+							<ol>
+								<%@top_tagged.each do |user_count_pair|%>
+								<li><%= user_count_pair[0]%></li>
+						<%end%>
 
-		</ol>
-	<%else%>
-		No friends tagged!
-	<%end%>
-
-<h3>Top Filters:</h3>
-	<ol>
-		<%@filters.each do |filter_count_pair| %>
-		<li><%=filter_count_pair[0]%>: <%=filter_count_pair[1]%> photos</li>
-		<%end%>
-	</ol>
-
-<!--Top 10 Likers-->
-<h3>Top Fans:</h3>
-	<ol>
-		<% i = 0 %>
-		<% while i < @number_of_photos %>
-			<% if @top_likers[i] %>
-			<li><%=@top_likers[i][0]%>: <%=@top_likers[i][1]%> likes</li>
-			<% end %>
-			<% i = i + 1 %>
-		<% end %>
-	</ol>
-
-<h3>Likes Stats</h3>
-<ul>
-	<li>Total Likes: <%=@total_likes%></li>
-	<li>Average Likes/Photo: <%=@average_likes_per_photo%></li>
-	<li>Unique Likers: <%=@unique_likers%></li>
-	<li>Percentage of Followers Who Liked: <%=@percentage_of_followers_who_liked%>%</li>
-</ul>
-
-
-<h3>Comments Stats</h3>
-<ul>
-	<li>Total Comments: <%=@total_comments%></li>
-	<li>Average Comments/Photo: <%=@average_comments_photo%></li>
-</ul>
-
-<h3>Type of Media:</h3>
-	<ul>
-		<%@type.each do |type| %>
-		<li><%= type[1]%> <%=type[0]%>s</li>
-		<%end%>
-	</ul>
-
-<h3>Most Recent Images:<br>
-
-	<%@image_urls.each do |url| %>
-	<img src="<%=url%>" width="200px">
-	<%end%>
-</h3>
+							</ol>
+					<%else%>
+						No friends tagged!
+					<%end%>
+				</div>
+			</div>
+			<!--end lists-->
+			<!--start filters blurb -->
+			<div>
+				<div class="filters">
+					<img class="filter_image" src="<%= image_path 'filter.png'%>" width="100px"/>
+					<p>Looks like <strong><%=@filters[0][0]%></strong> is your favorite filter.<br> You've used it <strong><%=@filters[0][1]%></strong> times.</p>
+				</div>
+			</div>
+			<!--end filters blurb-->
+		</div>
+		<!--end stats container-->
+	</div>
+	<!--end pseudo container-->
+</div>
+<!--end main container-->

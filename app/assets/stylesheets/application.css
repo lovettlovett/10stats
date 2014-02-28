@@ -49,3 +49,138 @@ a {
 #search {
 	text-align: center;
 }
+
+.main_container {
+	width: 100%;
+}
+
+.pseudo_container {
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.stats_container {
+	width: 45%;
+	margin: 0 auto;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #d1d1d1;
+	border-radius: 5px;
+}
+
+.section_banner {
+	text-align: center;
+	float: left;
+	width: 100%;
+	height: 50px;
+	background-color: #9D348A;
+	padding-bottom: 10px;
+	margin-bottom: 15px;
+}
+
+.section_title {
+	padding: 0px 25px 0px 15px;
+	color: #ffffff;
+}
+
+.bubbles {
+	display: inline-block;
+}
+
+.bubble {
+	display: inline-block;
+	margin: 0px 15px;
+}
+
+.icon_container {
+	border-style: solid;
+	border-color: #000000;
+	border-radius: 100px;
+	border-width: 5px;
+}
+
+.icon {
+	width: 100px;
+	padding: 15px 15px;
+}
+
+.bubble_box {
+	display: inline-block;
+	text-align: left !important;
+	padding: 0 20px 0 20px;
+	margin: 0 10px 0 10px;
+	width: 100px;
+	vertical-align: middle;
+	
+}
+
+.box_text {
+	display: inline-block;
+	text-align: center !important;
+	line-height: 20px;
+	font-size: 16px;
+}
+
+#av_likes {
+	font-weight: bold;
+	font-size: 24px;
+	color: #3EBBB3;
+}
+
+#velocity {
+	font-weight: bold;
+	font-size: 24px;
+	color: #84AC39;
+}
+
+#percent_followers {
+	font-weight: bold;
+	font-size: 24px;
+	color: #C34B8B;
+}
+
+.lists {
+	display: inline-block;
+}
+
+.list {
+	display: inline-block;
+	border-style: solid;
+	border-color: #d1d1d1;
+	border-radius: 5px;
+	border-width: 1px;
+	width: 200px;
+	vertical-align: top;
+}
+
+.list_title {
+	background: #FFD700;
+	color: #ffffff;
+	padding: 2px 0px;
+}
+
+#left {
+	
+}
+
+#right {
+	margin-left: 50px;
+}
+
+ol {
+	text-align: left;
+	line-height: 22px;
+}
+
+.filters {
+	background-color: #1F5C41;
+	width: 65%;
+	margin: 15px auto;
+	padding: 20px;
+	border-radius: 6px;
+}
+
+.filter_image {
+
+}
