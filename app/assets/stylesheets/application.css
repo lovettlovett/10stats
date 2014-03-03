@@ -8,19 +8,6 @@ body {
 	text-align: center;
 }
 
-header {
-	background-color: #8f3582;
-	font-family: 'Istok Web', sans-serif;
-	color: #ffffff;
-	position: fixed;
-  height: auto;
-  width: 100%;
-  z-index: 100;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-}
-
 #profile {
 	border-style:solid;
 	border-color:#8f3582;
@@ -39,6 +26,45 @@ button {
 	text-transform: none;
 	border-style: none;
 	border-radius:10px;
+}
+
+.search_container {
+	width: 50%;
+	background-color: #eeeeee;
+	margin: 0 auto;
+	padding: 10px 0;
+	border-radius: 6px;
+	border-color: #d1d1d1;
+	border-style: solid;
+}
+
+#username {
+	border-radius:10px;
+	background-color: #d1d1d1;
+	color: #000000;
+}
+
+#handle, #versus {
+	border-radius:10px;
+	background-color: #d1d1d1;
+	color: #000000;
+}
+
+
+input {
+	width: 200px;
+	background-color: #2172A8;
+	padding:15px;
+	font-size:18px;
+	color: #ffffff;
+	border-radius:4px;
+	text-decoration:none;
+	text-transform: none;
+	border-style: none;
+	border-radius:10px;
+}
+
+#battle_button {
 	margin-bottom: 15px;
 }
 
@@ -47,7 +73,7 @@ a {
 	color: #ffffff;
 }
 
-#search {
+.search {
 	text-align: center;
 }
 

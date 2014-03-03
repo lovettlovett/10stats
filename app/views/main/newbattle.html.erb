@@ -1,11 +1,15 @@
-<div id="search"><br><br>
-<h2>compare your Instagram<br> to a friend's</h2>
-<%= form_tag("/showbattle", method: "get") do %>
-  <%= label_tag(:handle, "your username:") %><br>
-  <%= text_field_tag(:handle) %><br><br>
-  <%= label_tag(:versus, "friend's username:") %><br>
-  <%= text_field_tag(:versus) %><br><br>
+<div class="search_container">
+	<div class="search">
+		<h1>battle a friend</h1>
+	<h3>compare your Instagram<br> to a friend's</h3>
+	<%= form_tag("/showbattle", method: "get") do %>
+	  <%= label_tag(:handle, "your username:") %><br>
+	  <%= text_field_tag(:handle) %><br><br>
+	  <%= label_tag(:versus, "friend's username:") %><br>
+	  <%= text_field_tag(:versus) %><br><br>
 
-  <%= submit_tag("Duel") %>
-<% end %>
+	  <%= submit_tag("Duel") %>
+	<% end %>
+	<h5><em>* your Instagram username must be public</em></h5>
+	</div>
 </div>

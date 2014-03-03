@@ -1,8 +1,11 @@
-<div id="search"><br><br>
-<%= form_tag("/showhandle", method: "get") do %>
-  <h2><%= label_tag(:username, "enter your Instagram username") %></h2>
-  <h5><em>* your Instagram username must be public</em></h5>
-  <%= text_field_tag(:username) %><br><br>
-  <%= submit_tag("view stats") %>
-<% end %>
+<div class="search_container">
+	<div class="search">
+		<h1>add handle</h1>
+	<%= form_tag("/showhandle", method: "get") do %>
+	  <h3><%= label_tag(:username, "enter your Instagram username") %></h3>
+	  <%= text_field_tag(:username) %><br><br>
+	  <%= submit_tag("view stats") %>
+	<% end %>
+	<h5><em>* your Instagram username must be public</em></h5>
+	</div>
 </div>
