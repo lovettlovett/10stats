@@ -4,14 +4,10 @@
 		<div class="stats_container">
 			<!--Handle-->
 			<div class="handle_name">
-				<h1><%=@username%></h1>
+				<h1 class="handle_text"><%=@username%></h1>
+				<h3><em>stats on <%=@username%>'s last 10 posts</em></h3>
 			</div>
 			<!--End Handle-->
-			<!--Section Banner-->
-			<div class="section_banner">
-				<h2 class="section_title">quick look</h2>
-			</div>
-			<!--End Section Banner-->
 			<!--start bubbles-->
 			<div class="bubbles">
 				<div class="bubble">
@@ -58,10 +54,14 @@
 				</div>
 			</div>
 			<!--end bubble boxes-->
+			<!--div spacer-->
+			<div class="spacer">
+			</div>
+			<!--div-->
 			<!--start lists-->
 			<div class="lists" id="left">
 				<div class="list">
-					<div class="list_title"><h2><span style="color:#FFD700">e</span>top fans<span style="color:#FFD700">d</span></h2></div>
+					<div class="list_title"><h2><img class="fans_tag"src="<%= image_path 'friends.png'%>"><span style="color:#FFE27C">e</span>top fans<span style="color:#FFE27C">d</span></h2></div>
 					<ol>
 						<% i = 0 %>
 						<% while i < @number_of_photos %>
@@ -74,7 +74,7 @@
 				</div>
 
 				<div class="list" id="right">
-					<div class="list_title"><h2>top tagged</h2></div>
+					<div class="list_title"><h2><img class="fans_tag" src="<%= image_path 'tag.png'%>">top tagged</h2></div>
 						<% if @top_tagged != "No users tagged"%>
 							<ol>
 								<%@top_tagged.each do |user_count_pair|%>
@@ -96,6 +96,21 @@
 				</div>
 			</div>
 			<!--end filters blurb-->
+			<!--comments blurb-->
+			<div>
+				<div class="filters">
+					<img class="filter_image" src="<%= image_path 'comment.png'%>" width="100px"/>
+					<p>Did you know you average <strong><%=@average_comments_photo%></strong> comments per post?<br> You've received <strong><%=@total_comments%></strong> total comments.</p>
+				</div>
+			</div>
+			<!--end comment blurb-->
+			<!--button-->
+			<div>
+				<button>
+					<a href="/newbattle">Battle a Friend!</a>
+				</button>
+			</div>
+			<!--end button-->
 		</div>
 		<!--end stats container-->
 	</div>

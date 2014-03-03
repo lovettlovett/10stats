@@ -39,6 +39,7 @@ button {
 	text-transform: none;
 	border-style: none;
 	border-radius:10px;
+	margin-bottom: 15px;
 }
 
 a {
@@ -66,22 +67,15 @@ a {
 	border-style: solid;
 	border-width: 2px;
 	border-color: #d1d1d1;
-	border-radius: 5px;
+	border-radius: 6px;
 }
 
-.section_banner {
-	text-align: center;
-	float: left;
-	width: 100%;
-	height: 50px;
-	background-color: #9D348A;
-	padding-bottom: 10px;
-	margin-bottom: 15px;
-}
-
-.section_title {
-	padding: 0px 25px 0px 15px;
-	color: #ffffff;
+.handle_name {
+	padding-top: 20px;
+	padding-bottom: 15px;
+	margin-bottom: 20px;
+	background-color: #B033B2;
+	border-color: #B033B2;
 }
 
 .bubbles {
@@ -125,19 +119,19 @@ a {
 #av_likes {
 	font-weight: bold;
 	font-size: 24px;
-	color: #3EBBB3;
+	color: #3CB29F;
 }
 
 #velocity {
 	font-weight: bold;
 	font-size: 24px;
-	color: #84AC39;
+	color: #FFE27C;
 }
 
 #percent_followers {
 	font-weight: bold;
 	font-size: 24px;
-	color: #C34B8B;
+	color: #B033B2;
 }
 
 .lists {
@@ -155,8 +149,8 @@ a {
 }
 
 .list_title {
-	background: #FFD700;
-	color: #ffffff;
+	background: #FFE27C;
+	color: #000000;
 	padding: 2px 0px;
 }
 
@@ -168,14 +162,20 @@ a {
 	margin-left: 50px;
 }
 
+.fans_tag {
+	width: 100px;
+	display: block;
+	margin: 0 auto;
+}
+
 ol {
 	text-align: left;
 	line-height: 22px;
 }
 
 .filters {
-	background-color: #1F5C41;
-	width: 65%;
+	background-color: #3CB29F;
+	width: 70%;
 	margin: 15px auto;
 	padding: 20px;
 	border-radius: 6px;
@@ -183,4 +183,8 @@ ol {
 
 .filter_image {
 
+}
+
+.spacer {
+	height: 15px;
 }
