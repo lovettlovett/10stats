@@ -8,22 +8,37 @@
 				<h3><em>stats on <%=@username%>'s last 10 posts</em></h3>
 			</div>
 			<!--End Handle-->
-			<!--start prof pics-->
-			<div class="bubble_boxes">
-				<div class="prof_pic_box">
-					<img class="prof_pic" src="<%=@handle_profile_pic%>">
+			<!--start bubbles-->
+			<div class="bubbles">
+				<div class="bubble">
+					<div class="icon_container">
+						<img class="icon" src="<%=@handle_profile_pic%>"/>
+					</div>
+					<div>
+						<h3>likes</h3>
+					</div>
 				</div>
 
-				<div class="bubble_box">
-					<h1 class="box_text">vs.</h1>
+				<div class="bubble">
+					<div class="icon_container">
+						<img class="icon" src="<%= image_path 'frequency.png'%>"/>
+					</div>
+					<div>
+						<h3>frequency</h3>
+					</div>
 				</div>
 
-				<div class="bubble_box">
-					<img class="prof_pic" src="<%=@versus_profile_pic%>">
+				<div class="bubble">
+					<div class="icon_container">
+						<img class="icon" src="<<%=@versus_profile_pic%>"/>
+					</div>
+					<div>
+						<h3>friends</h3>
+					</div>
 				</div>
+
 			</div>
-			<!--end bubble boxes-->
-
+			<!--end bubbles-->
 			<!--start bubble boxes-->
 			<div class="bubble_boxes">
 				<div class="bubble_box">

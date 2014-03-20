@@ -15,6 +15,11 @@ body {
 	border-radius: 100px;
 }
 
+.profile {
+	border-style:solid;
+	border-radius: 100px;
+}
+
 button {
 	width: 200px;
 	background-color: #2172A8;
@@ -113,6 +118,7 @@ a {
 	margin: 0px 15px;
 }
 
+
 .icon_container {
 	border-style: solid;
 	border-color: #000000;
@@ -135,9 +141,24 @@ a {
 	
 }
 
+.prof_pic_box {
+	display: inline-block;
+	text-align: center;
+	padding: 0 20px 0 20px;
+	margin: 0 10px 0 10px;
+	width: 100px;
+	vertical-align: middle;
+}
+
+.prof_pic {
+	border-radius:100px;
+	text-align: center;
+}
+
+
 .box_text {
 	display: inline-block;
-	text-align: center !important;
+	text-align: left !important;
 	line-height: 20px;
 	font-size: 16px;
 }

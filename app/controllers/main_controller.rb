@@ -78,9 +78,11 @@ class MainController < ApplicationController
 		if @handle_total_likes > @versus_total_likes 
 			@likes_difference = (@handle_total_likes - @versus_total_likes)
 			@likes_output = "#{@handle} has #{@likes_difference} more likes than #{@versus}"
-		else 
+		elsif @handle_total_likes < @versus_total_likes 
 			@likes_difference = (@versus_total_likes - @handle_total_likes)
 			@likes_output = "#{@versus} has #{@likes_difference} more likes than #{@handle}"
+		else
+			"#{@handle} & #{@verus} have the same number of total likes!"
 		end
 
 		@handle_total_comments = comments(@handle_user_id)
@@ -88,9 +90,11 @@ class MainController < ApplicationController
 		if @handle_total_comments > @versus_total_comments 
 			@comments_difference = (@handle_total_comments - @versus_total_comments)
 			@comments_output = "#{@handle} has #{@comments_difference} more comments than #{@versus}"
-		else 
+		elsif @handle_total_comments < @versus_total_comments 
 			@comments_difference = (@versus_total_comments - @handle_total_comments)
 			@comments_output = "#{@versus} has #{@comments_difference} more comments than #{@handle}"
+		else
+			"#{@handle} & #{@verus} have the same number of comments!"
 		end
 
 
@@ -101,11 +105,13 @@ class MainController < ApplicationController
 		@versus_average_likes_per_photo = ((@versus_total_likes)/@versus_number_of_photos)
 
 		if @handle_average_likes_per_photo > @versus_average_likes_per_photo
-			@average_likes_difference = (@handle_average_likes_per_photo - @versus_average_likes_per_photo)
+			@average_likes_difference = (@handle_average_likes_per_photo - @versus_average_likes_per_photo).round(2)
 			@average_likes_output = "#{@handle} has #{@average_likes_difference} more average likes per photo than #{@versus}"
-		else
-			@average_likes_difference = (@versus_average_likes_per_photo - @handle_average_likes_per_photo)
+		elsif @handle_average_likes_per_photo < @versus_average_likes_per_photo
+			@average_likes_difference = (@versus_average_likes_per_photo - @handle_average_likes_per_photo).round(2)
 			@average_likes_output = "#{@versus} has #{@average_likes_difference} more average likes per photo than #{@handle}"
+		else
+			"#{@versus} & #{@handle} have the same average likes per photo!"
 		end
 
 		@handle_average_comments_per_photo = ((@handle_total_comments)/@handle_number_of_photos)
@@ -114,9 +120,11 @@ class MainController < ApplicationController
 		if @handle_average_comments_per_photo > @versus_average_comments_per_photo
 			@average_comments_difference = ((@handle_average_comments_per_photo - @versus_average_comments_per_photo)).round(2)
 			@average_comments_output = "#{@handle} has #{@average_comments_difference} more average comments per photo than #{@versus}"
-		else
+		elsif @handle_average_comments_per_photo < @versus_average_comments_per_photo
 			@average_comments_difference = ((@versus_average_comments_per_photo - @handle_average_comments_per_photo)).round(2)
 			@average_comments_output = "#{@versus} has #{@average_comments_difference} more average comments per photo than #{@handle}"
+		else
+			"#{@handle} & #{@versus} have the same average number of comments!"
 		end
 
 		@handle_unique_likers = all_likers(@handle_user_id).uniq.count
@@ -125,9 +133,11 @@ class MainController < ApplicationController
 		if @handle_unique_likers > @versus_unique_likers
 			@unique_likers_difference = (@handle_unique_likers - @versus_unique_likers)
 			@unique_likers_output = "#{@handle} has #{@unique_likers_difference} more unique likers than #{@versus}"
-		else
+		elsif @handle_unique_likers < @versus_unique_likers
 			@unique_likers_difference = (@versus_unique_likers - @handle_unique_likers)
 			@unique_likers_output = "#{@versus} has #{@unique_likers_difference} more unique likers than #{@handle}"
+		else
+			"#{@handle} & #{@verus} have the same number of unique likers!"
 		end
 
 		@handle_percentage_of_followers_who_liked = ((@handle_unique_likers)/(@handle_followed_by) * 100).round(2)
@@ -136,9 +146,11 @@ class MainController < ApplicationController
 		if @handle_percentage_of_followers_who_liked > @versus_percentage_of_followers_who_liked
 			@percentage_of_followers_difference = ((@handle_percentage_of_followers_who_liked - @versus_percentage_of_followers_who_liked)).round(2)
 			@percentage_of_followers_output = "#{@percentage_of_followers_difference}% more of #{@handle}'s followers like their posts"
-		else
+		elsif @handle_percentage_of_followers_who_liked < @versus_percentage_of_followers_who_liked
 			@percentage_of_followers_difference = ((@versus_percentage_of_followers_who_liked - @handle_percentage_of_followers_who_liked)).round(2)
 			@percentage_of_followers_output = "#{@percentage_of_followers_difference}% more of #{@versus}'s followers like their posts"
+		else
+			"The same percentage of each of your followers liked your posts!"
 		end
 
 		@handle_top_likers = top_likers(@handle_user_id)
@@ -153,9 +165,11 @@ class MainController < ApplicationController
 		if @handle_velocity < @versus_velocity
 			@velocity_difference = ((@versus_velocity/@handle_velocity)).round(2)
 			@velocity_output = "#{@handle} posts #{@velocity_difference}x more frequently than #{@versus}"
-		else
+		elsif @handle_velocity > @versus_velocity
 			@velocity_difference = ((@handle_velocity/@versus_velocity)).round(2)
 			@velocity_output = "#{@versus} posts #{@velocity_difference}x more frequently than #{@handle}"
+		else
+			"Yall post with the same frequency!"
 		end
 
 		@handle_image_urls = last_10_urls(@handle_user_id)
